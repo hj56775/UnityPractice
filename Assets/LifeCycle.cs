@@ -42,11 +42,11 @@ public class LifeCycle : MonoBehaviour
     }*/
     void Update()
     {
-        if (Input.anyKeyDown)//아무 입력을 최로로 받을 때 true
+        /*if (Input.anyKeyDown)//아무 입력을 최로로 받을 때 true
             Debug.Log("플레이어가 아무 키를 눌렀습니다.");
-        /*키를 계속 누르고 있으면 true
+        키를 계속 누르고 있으면 true
            if (Input.anyKey)
-               Debug.Log("플레이어가 아무 키를 누르고 있습니다.");*/
+               Debug.Log("플레이어가 아무 키를 누르고 있습니다.");
         if (Input.GetKeyDown(KeyCode.Return))//Enter=Return, ESC=Escape
             Debug.Log("아이템을 구입하였습니다.");
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -66,6 +66,17 @@ public class LifeCycle : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             Debug.Log("슈퍼 미사일 발사!!");
+        }*/
+        if (Input.anyKeyDown)
+            Debug.Log("플레이어가 아무 키를 눌렀습니다.");
+
+        if (Input.GetButton("Horizontal"))
+        {
+            Debug.Log("횡 이동 중.."+ Input.GetAxis("Horizontal"));//GetAxis 수평,수직 버튼 입력을 받으면 float,GetAxisRaw는 1,-1,0(두개 동시에)
+        }
+        if (Input.GetButton("Vertical"))
+        {
+            Debug.Log("종 이동 중.." + Input.GetAxis("Vertical"));//GetAxis 수평,수직 버튼 입력을 받으면 float,GetAxisRaw는 1,-1,0(두개 동시에)
         }
     }
 }
